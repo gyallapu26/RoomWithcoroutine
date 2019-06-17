@@ -1,8 +1,7 @@
 package com.example.roomdb.db.entity
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.annotation.Nullable
+import androidx.room.*
 import org.jetbrains.annotations.NotNull
 
 
@@ -11,4 +10,7 @@ data class User(
     @PrimaryKey
     @NotNull
     @ColumnInfo(name = "fullName") var fullName : String,
-    @ColumnInfo(name = "age") var  age : Int?)
+    @ColumnInfo(name = "age") var  age : Int?,
+    @Nullable
+    var gender: String?,
+    var isDoctor: Boolean? =  false)
